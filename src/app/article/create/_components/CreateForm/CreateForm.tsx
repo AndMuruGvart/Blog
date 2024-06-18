@@ -12,10 +12,20 @@ function CreateForm() {
   return (
     <Section className="container mt-[240px] grid gap-12 md:mt-[320px]">
       <form className="grid gap-6" action={formAction}>
-        <textarea id="title" name="title" className="typography-title-3" />
+        <textarea
+          id="title"
+          name="title"
+          placeholder="Title"
+          className="typography-title-3"
+        />
         {state.errors?.title &&
           state.errors.title.map((error: string) => <p key={error}>{error}</p>)}
-        <textarea id="text" name="text" className="typography-title-3" />
+        <textarea
+          id="text"
+          name="text"
+          placeholder="Text"
+          className="typography-title-3"
+        />
         {state.errors?.text &&
           state.errors.text.map((error: string) => <p key={error}>{error}</p>)}
         <Submit className="max-w-[200px]">Create Article</Submit>
