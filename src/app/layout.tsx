@@ -32,7 +32,7 @@ export default function RootLayout({
     >
       <body
         className={cn(
-          'typography-body text-anti-flash-white flex min-h-dvh flex-col bg-black antialiased',
+          'typography-body flex min-h-dvh flex-col bg-black text-anti-flash-white antialiased',
           giorgio.variable,
           montserrat.variable,
         )}

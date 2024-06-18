@@ -34,7 +34,8 @@ export const variants = {
   textField,
 };
 
-export function TextField({
+export default function TextField({
+  // eslint-disable-next-line @typescript-eslint/no-shadow
   label,
   placeholder,
   className,

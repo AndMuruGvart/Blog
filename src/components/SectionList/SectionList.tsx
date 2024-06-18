@@ -7,7 +7,7 @@ interface Props {
 
 export default function SectionList({ className, children }: Props) {
   return (
-    <main className={cn('gap-30 lg:gap-50 flex flex-col md:gap-40', className)}>
+    <main className={cn('flex flex-col gap-30 md:gap-40 lg:gap-50', className)}>
       {children}
     </main>
   );

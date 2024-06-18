@@ -8,7 +8,7 @@ export default function Section({
     <section
       {...other}
       data-section
-      className={cn('md:scroll-mt-30 scroll-mt-20 lg:scroll-mt-40', className)}
+      className={cn('scroll-mt-20 md:scroll-mt-30 lg:scroll-mt-40', className)}
     />
   );
 }

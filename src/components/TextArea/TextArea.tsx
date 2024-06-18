@@ -5,7 +5,7 @@ import {
   type TextAreaProps as AriaTextAreaProps,
   TextField,
 } from 'react-aria-components';
-import { variants } from '../TextField';
+import { variants } from '../TextField/TextField';
 
 interface Props extends AriaTextAreaProps {
   label?: string;
