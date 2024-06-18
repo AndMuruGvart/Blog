@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-screen-xl px-6 md:px-20 lg:px-40;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #fe5442 transparent;
+  }
+
+  .grid-item-top-left {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .typography-title-1 {
+    @apply font-title text-4xl font-normal md:text-6xl lg:text-7xl;
+  }
+
+  .typography-title-2 {
+    @apply font-title text-3xl font-normal md:text-6xl;
+  }
+
+  .typography-title-3 {
+    @apply font-title text-xl font-normal md:text-2xl;
+  }
+
+  .typography-title-4 {
+    @apply font-title text-lg font-normal md:text-xl;
+  }
+
+  .typography-body-lg {
+    @apply font-body text-base font-normal lg:text-lg;
+  }
+
+  .typography-body {
+    @apply font-body text-base font-normal;
+  }
+
+  .typography-caption-md {
+    @apply font-body text-sm font-medium;
+  }
+
+  .typography-caption-sm {
+    @apply font-body text-xs font-semibold uppercase;
+  }
+
+  .typography {
+    @apply typography-body-lg text-anti-flash-white;
+
+    h2 {
+      @apply typography-title-3 mb-4 mt-12 first:mt-0 last:mb-0 md:mb-6 md:mt-20;
+    }
+
+    p {
+      @apply mb-4 last:mb-0;
+    }
+
+    ul {
+      @apply flex flex-col gap-4 max-md:pl-6;
+    }
+
+    li {
+      @apply flex gap-4 before:mt-[10px] before:h-1 before:w-1 before:flex-none before:bg-anti-flash-white lg:before:mt-[12px];
+    }
+
+    b,
+    strong {
+      @apply font-normal text-anti-flash-white;
+    }
+  }
+
+  .typography-legal {
+    h1 {
+      @apply typography-title-2 mb-2 last:mb-0 md:mb-4;
+    }
+
+    h2 {
+      @apply typography-title-3 mb-6 mt-12 first:mt-0 last:mb-0 md:mt-20;
+    }
+
+    h3 {
+      @apply typography-title-4 mb-4 mt-12 first:mt-0 last:mb-0;
+    }
+
+    p {
+      @apply typography-body mb-4 text-spanish-gray last:mb-0;
+    }
+
+    ul {
+      @apply mb-4 flex flex-col gap-4 text-spanish-gray last:mb-0 max-md:pl-6;
+    }
+
+    li {
+      @apply flex gap-4 before:mt-[10px] before:h-1 before:w-1 before:flex-none before:bg-anti-flash-white;
+    }
+
+    time {
+      @apply typography-body mb-4 block text-anti-flash-white last:mb-0 md:mb-6;
+    }
+
+    a {
+      @apply underline decoration-1 underline-offset-2 outline-none outline-offset-2 transition-colors hover:text-coral focus-visible:text-coral focus-visible:outline focus-visible:outline-2 focus-visible:outline-jordy-blue motion-reduce:transition-none;
+    }
+
+    b,
+    strong {
+      @apply font-normal text-anti-flash-white;
+    }
+  }
+}
