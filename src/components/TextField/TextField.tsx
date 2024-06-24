@@ -11,6 +11,7 @@ interface Props extends InputProps {
   label?: string;
   className?: string;
   placeholder?: string;
+  defaultValue?: string;
 }
 
 const input = cva(

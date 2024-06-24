@@ -11,6 +11,7 @@ interface Props extends AriaTextAreaProps {
   label?: string;
   className?: string;
   placeholder?: string;
+  defaultValue?: string;
 }
 
 export default function TextArea({
