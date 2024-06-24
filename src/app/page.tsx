@@ -1,5 +1,5 @@
 import SectionList from '@/components/SectionList/SectionList';
-import BlogSection from './_components/BlogSection/BlogSection';
+import BlogSection from '../components/BlogSection/BlogSection';
 import fetchArticles from './lib/data';
 
 async function Home() {

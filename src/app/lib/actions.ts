@@ -4,6 +4,30 @@ import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
+import { AuthError } from 'next-auth';
+import { signIn, signOut } from '../../auth';
+
+// eslint-disable-next-line consistent-return
+export async function authenticate(
+  prevState: string | undefined,
+  formData: FormData,
+) {
+  try {
+    await signIn('credentials', formData);
+  } catch (error) {
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case 'CredentialsSignin':
+          return 'Invalid credentials.';
+        default:
+          return 'Something went wrong.';
+      }
+    }
+    throw error;
+  }
+}
+
+// eslint-disable-next-line consistent-return, @typescript-eslint/no-unused-vars
 
 export type State = {
   errors?: {
@@ -12,6 +36,22 @@ export type State = {
   };
   message?: string | null;
 };
+
+export type LogOutState = {
+  message?: string | null;
+};
+
+// eslint-disable-next-line consistent-return, @typescript-eslint/no-unused-vars
+export async function logout(prevState: LogOutState | undefined) {
+  try {
+    await signOut();
+  } catch (error) {
+    return { message: 'Something went wrong.' };
+  }
+
+  // revalidatePath('/admin');
+  // redirect('/login');
+}
 
 const FormSchema = z.object({
   title: z.string(),

@@ -1,19 +1,13 @@
 'use client';
 
 import { useFormState } from 'react-dom';
-import { ArticlesField } from '@/app/lib/definition';
 import Section from '@/components/Section/Section';
-import { State, updateArticle } from '@/app/lib/actions';
+import { State, createArticle } from '@/app/lib/actions';
 import Submit from '@/components/Submit/Submit';
 
-interface Props {
-  article: ArticlesField;
-}
-
-function EditForm({ article }: Props) {
+function CreateForm() {
   const initialState: State = {};
-  const updateArticleWithId = updateArticle.bind(null, article.id);
-  const [state, formAction] = useFormState(updateArticleWithId, initialState);
+  const [state, formAction] = useFormState(createArticle, initialState);
 
   return (
     <Section className="container mt-[240px] grid gap-12 md:mt-[320px]">
@@ -21,23 +15,23 @@ function EditForm({ article }: Props) {
         <textarea
           id="title"
           name="title"
-          defaultValue={article.title}
-          className="typography-title-3"
+          placeholder="Title"
+          className="typography-title-4 rounded-none bg-transparent text-jordy-blue outline-none"
         />
         {state.errors?.title &&
           state.errors.title.map((error: string) => <p key={error}>{error}</p>)}
         <textarea
           id="text"
           name="text"
-          defaultValue={article.text}
-          className="typography-title-3"
+          placeholder="Text"
+          className="typography-title-4 rounded-none bg-transparent text-jordy-blue outline-none"
         />
         {state.errors?.text &&
           state.errors.text.map((error: string) => <p key={error}>{error}</p>)}
-        <Submit className="max-w-[200px]">Submit form</Submit>
+        <Submit className="max-w-[200px]">Create Article</Submit>
       </form>
     </Section>
   );
 }
 
-export default EditForm;
+export default CreateForm;
