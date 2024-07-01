@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { fetchArticleById } from '@/app/lib/data';
 import SectionList from '@/components/SectionList/SectionList';
-import ArticleSection from '../_components/ArticleSection/ArticleSection';
+import { ArticleSection } from '../_components/ArticleSection';
 
 async function ArticlePage({ params }: { params: { id: string } }) {
   const { id } = params;

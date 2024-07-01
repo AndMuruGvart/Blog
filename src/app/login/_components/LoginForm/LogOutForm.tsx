@@ -1,21 +1,24 @@
+'use client';
+
 import { useFormState, useFormStatus } from 'react-dom';
 import { LogOutState, logout } from '@/app/lib/actions';
+import { Button } from '@/components/ui/button';
 
-function LogOutButton() {
+const LogOutButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button
+    <Button
       type="submit"
-      className="mt-4 flex w-full items-start"
+      className="mt-4 flex items-start"
       aria-disabled={pending}
     >
       Log Out
-    </button>
+    </Button>
   );
-}
+};
 
-export default function LogOutForm() {
+export const LogOutForm = () => {
   const initialState: LogOutState = {};
   const [state, dispatch] = useFormState(logout, initialState);
   return (
@@ -24,4 +27,4 @@ export default function LogOutForm() {
       {state?.message && <p>{state?.message}</p>}
     </form>
   );
-}
+};
