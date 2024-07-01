@@ -1,12 +1,12 @@
 import deleteArticle from '@/app/lib/actions';
-import Submit from '@/components/Submit/Submit';
+import { Button } from '@/components/ui/button';
 
-export default async function DeleteArticle({ id }: { id: string }) {
+export const DeleteArticle = async ({ id }: { id: string }) => {
   const deleteArticleWithId = deleteArticle.bind(null, id);
 
   return (
     <form action={deleteArticleWithId}>
-      <Submit>Delete</Submit>
+      <Button variant="destructive">Delete</Button>
     </form>
   );
-}
+};

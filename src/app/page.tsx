@@ -1,6 +1,6 @@
 import SectionList from '@/components/SectionList/SectionList';
-import BlogSection from '../components/BlogSection/BlogSection';
 import fetchArticles from './lib/data';
+import { BlogSection } from '@/components/BlogSection';
 
 async function Home() {
   const articles = await fetchArticles();
