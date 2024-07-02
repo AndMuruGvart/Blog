@@ -11,7 +11,7 @@ async function seedArticles(client) {
     CREATE TABLE IF NOT EXISTS articles (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
       title VARCHAR(255) NOT NULL,
-      text VARCHAR(255) NOT NULL
+      text TEXT NOT NULL
       );
     `;
 

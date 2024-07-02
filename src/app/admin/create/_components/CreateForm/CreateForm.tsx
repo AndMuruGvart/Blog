@@ -1,18 +1,19 @@
 'use client';
 
 import { useFormState } from 'react-dom';
-import Section from '@/components/Section/Section';
 import { State, createArticle } from '@/app/lib/actions';
-import Submit from '@/components/Submit/Submit';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
-function CreateForm() {
+export const CreateForm = () => {
   const initialState: State = {};
   const [state, formAction] = useFormState(createArticle, initialState);
 
   return (
-    <Section className="container mt-[240px] grid gap-12 md:mt-[320px]">
+    <section className="container mt-[240px] grid gap-12 md:mt-[320px]">
+      <h1 className="typography-title-3">Create article</h1>
       <form className="grid gap-6" action={formAction}>
-        <textarea
+        <Textarea
           id="title"
           name="title"
           placeholder="Title"
@@ -20,7 +21,7 @@ function CreateForm() {
         />
         {state.errors?.title &&
           state.errors.title.map((error: string) => <p key={error}>{error}</p>)}
-        <textarea
+        <Textarea
           id="text"
           name="text"
           placeholder="Text"
@@ -28,10 +29,8 @@ function CreateForm() {
         />
         {state.errors?.text &&
           state.errors.text.map((error: string) => <p key={error}>{error}</p>)}
-        <Submit className="max-w-[200px]">Create Article</Submit>
+        <Button className="max-w-[200px]">Create Article</Button>
       </form>
-    </Section>
+    </section>
   );
-}
-
-export default CreateForm;
+};

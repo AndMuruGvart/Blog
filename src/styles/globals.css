@@ -4,16 +4,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-screen-xl px-6 md:px-20 lg:px-40;
-  }
-
-  .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #fe5442 transparent;
-  }
-
-  .grid-item-top-left {
-    grid-area: 1 / 1 / 2 / 2;
+    @apply mx-auto w-full max-w-screen-xl px-4 md:px-10 lg:px-20;
   }
 
   .typography-title-1 {
@@ -28,10 +19,6 @@
     @apply font-title text-xl font-normal md:text-2xl;
   }
 
-  .typography-title-4 {
-    @apply font-title text-lg font-normal md:text-xl;
-  }
-
   .typography-body-lg {
     @apply font-body text-base font-normal lg:text-lg;
   }
@@ -39,76 +26,68 @@
   .typography-body {
     @apply font-body text-base font-normal;
   }
+}
 
-  .typography-caption-md {
-    @apply font-body text-sm font-medium;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
   }
 
-  .typography-caption-sm {
-    @apply font-body text-xs font-semibold uppercase;
-  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-  .typography {
-    @apply typography-body-lg text-anti-flash-white;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    h2 {
-      @apply typography-title-3 mb-4 mt-12 first:mt-0 last:mb-0 md:mb-6 md:mt-20;
-    }
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    p {
-      @apply mb-4 last:mb-0;
-    }
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    ul {
-      @apply flex flex-col gap-4 max-md:pl-6;
-    }
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    li {
-      @apply flex gap-4 before:mt-[10px] before:h-1 before:w-1 before:flex-none before:bg-anti-flash-white lg:before:mt-[12px];
-    }
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    b,
-    strong {
-      @apply font-normal text-anti-flash-white;
-    }
-  }
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-  .typography-legal {
-    h1 {
-      @apply typography-title-2 mb-2 last:mb-0 md:mb-4;
-    }
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    h2 {
-      @apply typography-title-3 mb-6 mt-12 first:mt-0 last:mb-0 md:mt-20;
-    }
-
-    h3 {
-      @apply typography-title-4 mb-4 mt-12 first:mt-0 last:mb-0;
-    }
-
-    p {
-      @apply typography-body mb-4 text-spanish-gray last:mb-0;
-    }
-
-    ul {
-      @apply mb-4 flex flex-col gap-4 text-spanish-gray last:mb-0 max-md:pl-6;
-    }
-
-    li {
-      @apply flex gap-4 before:mt-[10px] before:h-1 before:w-1 before:flex-none before:bg-anti-flash-white;
-    }
-
-    time {
-      @apply typography-body mb-4 block text-anti-flash-white last:mb-0 md:mb-6;
-    }
-
-    a {
-      @apply underline decoration-1 underline-offset-2 outline-none outline-offset-2 transition-colors hover:text-coral focus-visible:text-coral focus-visible:outline focus-visible:outline-2 focus-visible:outline-jordy-blue motion-reduce:transition-none;
-    }
-
-    b,
-    strong {
-      @apply font-normal text-anti-flash-white;
-    }
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }

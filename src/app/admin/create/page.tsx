@@ -1,5 +1,5 @@
 import SectionList from '@/components/SectionList/SectionList';
-import CreateForm from './_components/CreateForm/CreateForm';
+import { CreateForm } from './_components/CreateForm';
 
 async function CreateArticlePage() {
   return (

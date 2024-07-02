@@ -42,15 +42,12 @@ export type LogOutState = {
 };
 
 // eslint-disable-next-line consistent-return, @typescript-eslint/no-unused-vars
-export async function logout(prevState: LogOutState | undefined) {
+export async function Logout(prevState: LogOutState | undefined) {
   try {
     await signOut();
   } catch (error) {
     return { message: 'Something went wrong.' };
   }
-
-  // revalidatePath('/admin');
-  // redirect('/login');
 }
 
 const FormSchema = z.object({

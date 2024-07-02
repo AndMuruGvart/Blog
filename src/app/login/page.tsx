@@ -1,5 +1,5 @@
 import SectionList from '@/components/SectionList/SectionList';
-import LoginForm from './_components/LoginForm/LoginForm';
+import { LoginForm } from './_components/LoginForm';
 
 function LoginPage() {
   return (
